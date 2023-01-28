@@ -16,6 +16,8 @@ MOSI = 11
 SCK = 10
 CS = 9
 
+#32 to 126
+char = 65
 choice = 0
 cursor = 0
 line = 0
@@ -214,250 +216,6 @@ def connect_to_network(ss, pw):
 def clear():
     LCD.fill(LCD.white)
 
-def increment(cur):
-    if cur == "A":
-        return "B"
-    elif cur == "B":
-        return "C"
-    elif cur == "C":
-        return "D"
-    elif cur == "D":
-        return "E"
-    elif cur == "E":
-        return "F"
-    elif cur == "F":
-        return "G"
-    elif cur == "G":
-        return "H"
-    elif cur == "H":
-        return "I"
-    elif cur == "I":
-        return "J"
-    elif cur == "J":
-        return "K"
-    elif cur == "K":
-        return "L"
-    elif cur == "L":
-        return "M"
-    elif cur == "M":
-        return "N"
-    elif cur == "N":
-        return "O"
-    elif cur == "O":
-        return "P"
-    elif cur == "P":
-        return "Q"
-    elif cur == "Q":
-        return "R"
-    elif cur == "R":
-        return "S"
-    elif cur == "S":
-        return "T"
-    elif cur == "T":
-        return "U"
-    elif cur == "U":
-        return "V"
-    elif cur == "V":
-        return "W"
-    elif cur == "W":
-        return "X"
-    elif cur == "X":
-        return "Y"
-    elif cur == "Y":
-        return "Z"
-    elif cur == "Z":
-        return "1"
-    elif cur == "1":
-        return "2"
-    elif cur == "2":
-        return "3"
-    elif cur == "3":
-        return "4"
-    elif cur == "4":
-        return "5"
-    elif cur == "5":
-        return "6"
-    elif cur == "6":
-        return "7"
-    elif cur == "7":
-        return "8"
-    elif cur == "8":
-        return "9"
-    elif cur == "9":
-        return "0"
-    elif cur == "0":
-        return "!"
-    elif cur == "!":
-        return "@"
-    elif cur == "@":
-        return "#"
-    elif cur == "#":
-        return "%"
-    elif cur == "%":
-        return "^"
-    elif cur == "^":
-        return "&"
-    elif cur == "&":
-        return "*"
-    elif cur == "*":
-        return "("
-    elif cur == "(":
-        return ")"
-    elif cur == ")":
-        return "-"
-    elif cur == "-":
-        return "="
-    elif cur == "=":
-        return "_"
-    elif cur == "_":
-        return "{"
-    elif cur == "{":
-        return "}"
-    elif cur == "}":
-        return "|"
-    elif cur == "|":
-        return ":"
-    elif cur == ":":
-        return ";"
-    elif cur == ";":
-        return "'"
-    elif cur == "'":
-        return ","
-    elif cur == ",":
-        return "<"
-    elif cur == "<":
-        return "."
-    elif cur == ".":
-        return ">"
-    elif cur == ">":
-        return "/"
-    elif cur == "/":
-        return " "
-    elif cur == " ":
-        return "A"
-
-def decrement(cur):
-    if cur == "A":
-        return " "
-    elif cur == "B":
-        return "A"
-    elif cur == "C":
-        return "B"
-    elif cur == "D":
-        return "C"
-    elif cur == "E":
-        return "D"
-    elif cur == "F":
-        return "E"
-    elif cur == "G":
-        return "F"
-    elif cur == "H":
-        return "G"
-    elif cur == "I":
-        return "H"
-    elif cur == "J":
-        return "I"
-    elif cur == "K":
-        return "J"
-    elif cur == "L":
-        return "K"
-    elif cur == "M":
-        return "L"
-    elif cur == "N":
-        return "M"
-    elif cur == "O":
-        return "N"
-    elif cur == "P":
-        return "O"
-    elif cur == "Q":
-        return "P"
-    elif cur == "R":
-        return "Q"
-    elif cur == "S":
-        return "R"
-    elif cur == "T":
-        return "S"
-    elif cur == "U":
-        return "T"
-    elif cur == "V":
-        return "U"
-    elif cur == "W":
-        return "V"
-    elif cur == "X":
-        return "W"
-    elif cur == "Y":
-        return "X"
-    elif cur == "Z":
-        return "Y"
-    elif cur == "1":
-        return "Z"
-    elif cur == "2":
-        return "1"
-    elif cur == "3":
-        return "2"
-    elif cur == "4":
-        return "3"
-    elif cur == "5":
-        return "4"
-    elif cur == "6":
-        return "5"
-    elif cur == "7":
-        return "6"
-    elif cur == "8":
-        return "7"
-    elif cur == "9":
-        return "8"
-    elif cur == "0":
-        return "9"
-    elif cur == "!":
-        return "0"
-    elif cur == "@":
-        return "!"
-    elif cur == "#":
-        return "@"
-    elif cur == "%":
-        return "#"
-    elif cur == "^":
-        return "%"
-    elif cur == "&":
-        return "^"
-    elif cur == "*":
-        return "&"
-    elif cur == "(":
-        return "*"
-    elif cur == ")":
-        return "("
-    elif cur == "-":
-        return ")"
-    elif cur == "=":
-        return "-"
-    elif cur == "_":
-        return "="
-    elif cur == "{":
-        return "_"
-    elif cur == "}":
-        return "{"
-    elif cur == "|":
-        return "}"
-    elif cur == ":":
-        return "|"
-    elif cur == ";":
-        return ":"
-    elif cur == "'":
-        return ";"
-    elif cur == ",":
-        return "'"
-    elif cur == "<":
-        return ","
-    elif cur == ".":
-        return "<"
-    elif cur == ">":
-        return "."
-    elif cur == "/":
-        return ">"
-    elif cur == " ":
-        return "/"
-
 def getstring(dic):
     converted = str()
     for key in dic:
@@ -512,13 +270,13 @@ if __name__=='__main__':
                     w = 11
                     line = 1
             elif line == 1:
-                cursor = 0
-                line = 2
-                x = 78
-                y = 18
+                ssid.append("A")
+                char = 65
+                cursor += 1
             elif line == 2:
-                cont = False
-                connect_to_network(ssidout, passwout)
+                passw.append("A")
+                char = 65
+                cursor += 1
             time.sleep(.5)
 
         if(keyB.value() == 0):
@@ -530,23 +288,15 @@ if __name__=='__main__':
                 #Manual
                     pass
             elif line == 1:
-                if ssid[cursor].islower():
-                    if cursor == len(ssid) - 1 and cursor != 0:
-                        ssid.pop(cursor)
-                        cursor -= 1
-                    else:
-                        ssid[cursor] = ssid[cursor].upper()
-                else:
-                    ssid[cursor] = ssid[cursor].lower()
+                if cursor == len(ssid) - 1 and cursor != 0:
+                    ssid.pop(cursor)
+                    cursor -= 1
+                    char = ord(ssid[cursor])
             elif line == 2:
-                if passw[cursor].islower():
-                    if cursor == len(passw) - 1 and cursor != 0:
-                        passw.pop(cursor)
-                        cursor -= 1
-                    else:
-                        passw[cursor] = passw[cursor].upper()
-                else:
-                    passw[cursor] = passw[cursor].lower()
+                if cursor == len(passw) - 1 and cursor != 0:
+                    passw.pop(cursor)
+                    cursor -= 1
+                    char = ord(passw[cursor])
             time.sleep(.25)
 
         if(keyUP.value() == 0):
@@ -558,13 +308,17 @@ if __name__=='__main__':
                     #Manual
                     pass
             elif line == 1 and choice == 0:
-                ssid[cursor] = increment(ssid[cursor].upper())
+                if char < 126:
+                    char += 1
+                    ssid[cursor] = chr(char)               
             elif line == 1 and choice == 1:
                 if cursor < len(nl) - 1:
                     cursor +=1
                     ssidout = nl[cursor]
             elif line == 2:
-                passw[cursor] = increment(passw[cursor].upper())
+                if char < 126:
+                    char += 1
+                    passw[cursor] = chr(char)
             time.sleep(.25)
 
         if(keyDOWN.value() == 0):
@@ -576,13 +330,17 @@ if __name__=='__main__':
                 #Manual
                     pass
             elif line == 1 and choice == 0:
-                ssid[cursor] = decrement(ssid[cursor].upper())
+                if char > 31:
+                    char -= 1
+                    ssid[cursor] = chr(char)
             elif line == 1 and choice == 1:
                 if cursor != 0:
                     cursor -=1
                     ssidout = nl[cursor]
             elif line == 2:
-                passw[cursor] = decrement(passw[cursor].upper())
+                if char > 31:
+                    char -= 1
+                    passw[cursor] = chr(char)
             time.sleep(.25)
 
         if(keyCLICK.value() == 0):
@@ -594,10 +352,14 @@ if __name__=='__main__':
                 #Manual
                     pass
             elif line == 1:
-                ssid.append("A")
+                cursor = 0
+                line = 2
+                char = 65
+                x = 78
+                y = 18
             elif line == 2:
-                passw.append("A")
-            cursor += 1
+                cont = False
+                connect_to_network(ssidout, passwout)
             time.sleep(.5)
 
         if(keyLEFT.value() == 0):
@@ -613,9 +375,11 @@ if __name__=='__main__':
             elif line == 1 and choice == 0:
                 if cursor > 0:
                     cursor -= 1
+                    char = ord(ssid[cursor])
             elif line == 2:
                 if cursor > 0:
                     cursor -= 1
+                    char = ord(passw[cursor])
             time.sleep(.25)
 
         if(keyRIGHT.value() == 0):
@@ -631,9 +395,11 @@ if __name__=='__main__':
             elif line == 1:
                 if cursor < len(ssid) - 1:
                     cursor += 1
+                    char = ord(ssid[cursor])
             elif line == 2:
                 if cursor < len(passw) - 1:
                     cursor += 1
+                    char = ord(passw[cursor])
             time.sleep(.25)
 
         if cont == True:
